@@ -14,11 +14,11 @@ Each docker image is installed with the following components:
 
   Run command with mapping to local port `5902`:
 
-      docker run -d -p 7902:22-p 5902:5901 -p 6902:6901 consol/ubuntu-xfce-vnc
+      docker run -d -p 7902:22-p 5902:5901 -p 6902:6901 ozzadar/docker-headless-vnc-container:ubuntu
 
   Build image from scratch:
 
-      docker build -t consol/ubuntu-xfce-vnc ubuntu-xfce-vnc
+      docker build -t ubuntu-xfce-vnc ubuntu-xfce-vnc
 
   => connect via __VNC viewer `localhost:5902`__, default password: `vncpassword`
 
