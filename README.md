@@ -31,7 +31,7 @@ Each docker image is installed with the following components:
 Simple override the value of the environment variable `VNC_PW`. For example in
 the docker run command:
 
-    docker run -it -p 5911:5901 -p 6902:6901 -e "VNC_PW=my-new-password" consol/centos-xfce-vnc
+    docker run -it -p 5911:5901 -p 6902:6901 -e "VNC_PW=my-new-password" ozzadar/docker-headless-vnc-container:ubuntu
 
 ### Contact
 For questions or maybe some hints, feel free to contact us via **[sakuli@consol.de](mailto:sakuli@consol.de)** or open an [issue](https://github.com/ConSol/docker-headless-vnc-container/issues/new).
