@@ -1,8 +1,7 @@
-# This Dockerfile is used to build an sakuli image based on Ubuntu
+# This Dockerfile is used to build an sakuli image based on Ubuntu (+ ssh)
 
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 
-MAINTAINER Tobias Schneck "tobias.schneck@consol.de"
 ENV REFRESHED_AT 2016-06-01
 
 ENV JAVA_VERSION 8u92
@@ -30,11 +29,6 @@ RUN mkdir -p $NO_VNC_HOME/utils/websockify \
     &&  wget -qO- https://github.com/kanaka/websockify/archive/v0.7.0.tar.gz | tar xz --strip 1 -C $NO_VNC_HOME/utils/websockify \
     && chmod +x -v /root/noVNC/utils/*.sh
 
-### Install firfox and chrome browser
-#RUN apt-get install -y firefox chromium-browser chromium-browser-l10n #chromium-codecs-ffmpeg \
- #   && ln -s /usr/bin/chromium-browser /usr/bin/google-chrome \
-  #  && echo "alias chromium-browser='/usr/bin/chromium-browser --user-data-dir'" >> /root/.bashrc
-
 ### install ssh
 RUN apt-get install -y openssh-server libxss1 libgconf2-4 libnss3-1d 
 RUN apt-get install -y xbase-clients
@@ -59,7 +53,6 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN mkdir /chrome
 WORKDIR /chrome
 COPY chrome/ .
-
 
 
 # xvnc server porst, if $DISPLAY=:1 port will be 5901

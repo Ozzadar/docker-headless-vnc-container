@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=Chromium Web Browser
+Name=Chrome Web Browser
 Name[ast]=Restolador web Chromium
 Name[bg]=Уеб четец Chromium
 Name[bn]=ক্রোমিয়াম ওয়েব ব্রাউজার
@@ -167,17 +167,17 @@ Comment[vi]=Truy cập Internet
 Comment[zh_CN]=访问互联网
 Comment[zh_HK]=連線到網際網路
 Comment[zh_TW]=連線到網際網路
-Exec=chromium-browser --user-data-dir %U
+Exec=google-chrome --no-sandbox --user-data-dir %U
 Terminal=false
 X-MultipleArgs=false
 Type=Application
-Icon=chromium-browser
+Icon=google-chrome
 Categories=Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;
 StartupWMClass=Chromium-browser
 StartupNotify=true
 Actions=NewWindow;Incognito;TempProfile;
-X-AppInstall-Package=chromium-browser
+X-AppInstall-Package=google-chrome
 
 Path=
 
@@ -219,7 +219,7 @@ Name[uk]=Відкрити нове вікно
 Name[vi]=Mở cửa sổ mới
 Name[zh_CN]=打开新窗口
 Name[zh_TW]=開啟新視窗
-Exec=chromium-browser
+Exec=google-chrome --no-sandbox --user-data-dir %U
 
 [Desktop Action Incognito]
 Name=Open a New Window in incognito mode
@@ -257,7 +257,7 @@ Name[uk]=Відкрити нове вікно у приватному режим
 Name[vi]=Mở cửa sổ mới trong chế độ ẩn danh
 Name[zh_CN]=以隐身模式打开新窗口
 Name[zh_TW]=以匿名模式開啟新視窗
-Exec=chromium-browser --user-data-dir --incognito
+Exec=google-chrome --no-sandbox --user-data-dir %U --incognito
 
 [Desktop Action TempProfile]
 Name=Open a New Window with a temporary profile
@@ -295,4 +295,4 @@ Name[ug]=ۋاقىتلىق سەپلىمە ھۆججەت بىلەن يېڭى كۆز
 Name[vi]=Mở cửa sổ mới với hồ sơ tạm
 Name[zh_CN]=以临时配置文件打开新窗口
 Name[zh_TW]=以暫時性個人身分開啟新視窗
-Exec=chromium-browser --user-data-dir --temp-profile
+Exec=google-chrome --no-sandbox --user-data-dir %U2 --temp-profile

@@ -8,29 +8,13 @@ Each docker image is installed with the following components:
 * [**noVNC**](https://github.com/kanaka/noVNC) - HTML5 VNC client (default http port `6901`)
 * Java JRE 8
 * Browsers:
-  * Mozilla Firefox + Java Plugin
-  * Google Chrome (Java-Plugin is no longer supported)
-
-### Current provided OS & UI sessions:
-* __Centos7 with `Xfce4` UI session:__
-
-  Run command with mapping to local port `5911`:
-
-      docker run -d -p 5901:5901 -p 6901:6901 consol/centos-xfce-vnc
-
-  Build image from scratch:
-
-      docker build -t consol/centos-xfce-vnc centos-xfce-vnc
-
-  => connect via __VNC viewer `localhost:5901`__, default password: `vncpassword`
-
-  => connect via __noVNC HTML5 client__: [http://localhost:6901/vnc_auto.html?password=vncpassword]()
+  * Google Chrome v50.0.2661.94 
 
 * __Ubuntu 14.04 with `Xfce4` UI session:__
 
   Run command with mapping to local port `5902`:
 
-      docker run -d -p 5902:5901 -p 6902:6901 consol/ubuntu-xfce-vnc
+      docker run -d -p 7902:22-p 5902:5901 -p 6902:6901 consol/ubuntu-xfce-vnc
 
   Build image from scratch:
 
@@ -39,6 +23,7 @@ Each docker image is installed with the following components:
   => connect via __VNC viewer `localhost:5902`__, default password: `vncpassword`
 
   => connect via __noVNC HTML5 client__: [http://localhost:6902/vnc_auto.html?password=vncpassword]()
+  => connect via __ssh__: ssh localhost -p 7902 -l root , default password: root
 
 ### Hints
 #### override the VNC password
