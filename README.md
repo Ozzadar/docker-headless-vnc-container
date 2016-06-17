@@ -23,8 +23,8 @@ Each docker image is installed with the following components:
   => connect via __VNC viewer `localhost:5902`__, default password: `vncpassword`
 
   => connect via __noVNC HTML5 client__: [http://localhost:6902/vnc_auto.html?password=vncpassword]()
-  
-  => connect via __ssh__: ssh localhost -p 7902 -l root , default password: root
+
+  => connect via __ssh__: ```ssh localhost -p 7902 -l root``` , default password: root
 
 ### Hints
 #### override the VNC password
