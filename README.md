@@ -14,7 +14,7 @@ Each docker image is installed with the following components:
 
   Run command with mapping to local port `5902`:
 
-      docker run -d -p 7902:22-p 5902:5901 -p 6902:6901 ozzadar/docker-headless-vnc-container:ubuntu
+      docker run -d -p 7902:22 -p 5902:5901 -p 6902:6901 ozzadar/docker-headless-vnc-container:ubuntu
 
   Build image from scratch:
 

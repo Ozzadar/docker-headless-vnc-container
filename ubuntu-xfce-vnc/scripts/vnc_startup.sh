@@ -21,10 +21,14 @@ echo -e "\nVNCSERVER started on DISPLAY= $DISPLAY \n\t=> connect via VNC viewer 
 echo -e "\nnoVNC HTML client started:\n\t=> connect via http://$VNC_IP:$NO_VNC_PORT/vnc_auto.html?password=..."
 
 ## create link to VNC display
-echo "export DISPLAY=localhost:1" >> /root/.bashrc
+echo "export DISPLAY=localhost:1" >> /root/bashrc
 
 ## create symlinks to launch custom chrome version
 ln -s /chrome/google-chrome /usr/bin/google-chrome 
+
+
+##Launch pulse audio on startup
+pulseaudio &
 
 for i in "$@"
 do
