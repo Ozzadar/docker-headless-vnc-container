@@ -1,5 +1,7 @@
 #!/bin/bash
-/usr/sbin/sshd -D &
+/usr/sbin/ssh
+##Launch pulse audio on startup
+pulseaudio &
 
 #resolve_vnc_connection
 VNC_IP=$(ip addr show eth0 | grep -Po 'inet \K[\d.]+')
@@ -27,8 +29,13 @@ echo "export DISPLAY=localhost:1" >> /root/bashrc
 ln -s /chrome/google-chrome /usr/bin/google-chrome 
 
 
-##Launch pulse audio on startup
-pulseaudio &
+echo 'Pulse audio loaded'
+
+#set up audio sink and source
+pactl load-module module-null-sink sink_name="cinnovator-virtual-audio-sink" sink_properties="device.description=cinnovator-virtual-audio-sink"
+echo 'added sink'
+pactl load-module module-virtual-source master=cinnovator-virtual-audio-sink.monitor source_name="cinnovator-virtual-audio-source" source_properties="device.description=cinnovator-virtual-audio-source"
+echo 'added source'
 
 for i in "$@"
 do
