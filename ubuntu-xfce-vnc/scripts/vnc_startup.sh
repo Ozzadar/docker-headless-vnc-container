@@ -1,5 +1,6 @@
 #!/bin/bash
-/usr/sbin/ssh
+/usr/sbin/sshd -D &
+
 ##Launch pulse audio on startup
 pulseaudio &
 

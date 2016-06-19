@@ -13,6 +13,7 @@ ENV NO_VNC_HOME /root/noVNC
 ENV VNC_COL_DEPTH 24
 ENV VNC_RESOLUTION 1280x1024
 ENV VNC_PW vncpassword
+ENV ROOT_PW root
 
 ENV SAKULI_DOWNLOAD_URL https://labs.consol.de/sakuli/install
 
@@ -43,9 +44,8 @@ RUN mkdir -p $JAVA_HOME \
 
 RUN mkdir /var/run/sshd
 
-## Set Password here
-RUN echo 'root:root' |chpasswd
-
+## Set Password here for ssh
+RUN echo 'root:$ROOT_PW' |chpasswd
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
